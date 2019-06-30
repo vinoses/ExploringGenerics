@@ -31,7 +31,7 @@ public class PeopleHandler {
     setComment(id, comment);
   }
 
-  private TelephoneNumber processPhone(String phoneInput) {
+  public TelephoneNumber processPhone(String phoneInput) {
     try {
       telephoneNumber.setNumber(phoneInput);
     } catch (JAXRException e) {
@@ -40,7 +40,7 @@ public class PeopleHandler {
     return telephoneNumber;
   }
 
-  private PostalAddress processAddress(String address, String city, String state, String zip){
+  public PostalAddress processAddress(String address, String city, String state, String zip){
     try {
       postalAddress.setCity(city);
       postalAddress.setStateOrProvince(state);
@@ -71,32 +71,32 @@ public class PeopleHandler {
     return person;
   }
 
-  private Integer getId(){
+  public Integer getId(){
     return id++;
   }
 
-  private void initializeId() {
+  public void initializeId() {
     id = 0;
   }
 
-  private void setName(int id, String firstName, String lastName)
+  public void setName(int id, String firstName, String lastName)
   {
     name.setKey(id);
     name.setValue(firstName + " " + lastName);
   }
 
-  private void setPhone(int id, TelephoneNumber phoneInput)
+  public void setPhone(int id, TelephoneNumber phoneInput)
   {
     phone.setKey(id);
     phone.setValue(phoneInput);
   }
 
-  private void setAddress(int id, PostalAddress addressInput)
+  public void setAddress(int id, PostalAddress addressInput)
   {
     address.setKey(id);
     address.setValue(addressInput);
   }
-  private void setComment(int id, String commentInput)
+  public void setComment(int id, String commentInput)
   {
     name.setKey(id);
     name.setValue(commentInput);
