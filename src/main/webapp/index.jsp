@@ -25,9 +25,16 @@
   <link rel="stylesheet" type="text/css" href="/ExploringGenerics_war_exploded/resources/css/style.css" />
 
 </head>
-<header></header>
-<body class="container-fluid">
-<form onsubmit="return false;">
+<header style="background-color: #f7f7f7" class="header"></header>
+<body id="body" class="container-fluid mr-1">
+<div class="active">active div</div>
+<div class="alert">alert div</div>
+<div class="alert-danger">alert-danger div</div>
+<div class="alert-heading">alert-heading div</div>
+<div class="alert card">alert card div <div id="formSwap" class="btn btn-danger">btn btn-danger click to change form style</div><div id="displaySwap" class="btn-link btn-block">btn-link btn-block click to cycle body displays</div></div>
+<div class="card">card div</div>
+<div class="bg-info">
+<form id="form1" class="form-control-sm" onsubmit="return false;">
   <div class="col-lg">
     <div class="form-row">
       <div class="col-sm">
@@ -94,5 +101,6 @@
   </div>
   <button class="btn btn-primary" type="submit">Submit form</button>
 </form>
+</div>
 </body>
 </html>
