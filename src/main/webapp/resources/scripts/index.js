@@ -3,8 +3,7 @@ $(document).ready( function() {
 	let count = 0;
 
 	function initialize(){
-		attachHandlers();
-		attachValidators();
+
 	}
 
 	$("#displaySwap").click( function() {
@@ -40,34 +39,18 @@ $(document).ready( function() {
 		}
 	});
 
-	function attachHandlers(){
-		var firstName = document.getElementById("firstName");
-	}
-
-	function attachValidators() {
-
-		var firstName = document.getElementById("firstName");
-		if (firstName) {
-			firstName.addEventListener("input", function (event) {
-				if (firstName.validity.typeMismatch) {
-					firstName.setCustomValidity("I expect your first name darling!");
-				} else {
-					firstName.setCustomValidity("");
-				}
+	$("#submit").click( function() {
+		alert("HERE");
+		peoplehandler.setName("0","vin","oses",
+		function() {
+			peoplehandler.getNameFromPerson(function(data) {
+				alert(data);
+				$("#firstName").val(data);
+				$("#lastName").val(data);
 			});
-		}
+		});
 
-		var lastName = document.getElementById("lastName");
-		if (lastName) {
-			lastName.addEventListener("input", function (event) {
-				if (lastName.validity.typeMismatch) {
-					lastName.setCustomValidity("I expect your last name darling!");
-				} else {
-					lastName.setCustomValidity("");
-				}
-			});
-		}
-	}
+	});
 });
 
 
